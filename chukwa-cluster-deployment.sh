@@ -73,6 +73,7 @@ while read ip; do
         done
         echo "export CHUKWA_HOME=$(pwd)" >> ${HOME}/.bashrc
         source ${HOME}/.bashrc
+        curl -L "" > $CHUKWA_HOME/bin/
         cp $CHUKWA_HOME/share/chukwa/${f}-SNAPSHOT-client.jar $HADOOP_HOME/share/hadoop/common/lib
         cp $CHUKWA_HOME/share/chukwa/${f}-SNAPSHOT-client.jar $HBASE_HOME/lib
     else 
@@ -90,7 +91,7 @@ while read ip; do
     cp $CHUKWA_HOME/etc/chukwa/hadoop-metrics2.properties $HADOOP_CONF_DIR/hadoop-metrics2.properties
     cp $CHUKWA_HOME/share/chukwa/lib/json-simple-1.1.jar $HADOOP_HOME/share/hadoop/common/lib
     cp $HBASE_CONF_DIR/log4j.properties $HBASE_CONF_DIR/log4j.properties.bk
-    cp $CHUKWA_CONF_DIR/hbase-log4j.properties $HBASE_CONF_DIR/log4j.properties
+    cp $CHUKWA_HOME/etc/chukwa/hbase-log4j.properties $HBASE_CONF_DIR/log4j.properties
     cp $HBASE_CONF_DIR/hadoop-metrics2-hbase.properties $HBASE_CONF_DIR/hadoop-metrics2-hbase.properties.bk
     cp $CHUKWA_HOME/etc/chukwa/hadoop-metrics2-hbase.properties $HBASE_CONF_DIR/hadoop-metrics2-hbase.properties
     cp $CHUKWA_HOME/share/chukwa/lib/json-simple-1.1.jar $HBASE_HOME/lib
