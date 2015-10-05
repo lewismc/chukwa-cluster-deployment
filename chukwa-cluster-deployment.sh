@@ -50,8 +50,8 @@ done
 
 if [[ $# -ne 1 ]]; then
     echo "chukwa-cluster-deployment [-m|--master]"
-    echo -e "\t-m|--master\tOptionally checks out Chukwa master branch from the official Apache Git source repository."
-    echo -e "\tInstall Directory\tDirectory which Chuwka is to be installed in on every node present in IP_FILE."
+    echo -e "\t\t-m|--master\tOptionally checks out Chukwa master branch from the official Apache Git source repository instead of using most recent stable Chukwa."
+    echo -e "\tInstall Directory\tDirectory which Chuwka is to be installed in on every node present in machines.txt"
     exit 1
 fi
 
